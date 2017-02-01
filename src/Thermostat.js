@@ -14,6 +14,12 @@ Thermostat.prototype.getTemp = function () {
 };
 
 Thermostat.prototype.up = function (number) {
-  this.setTemp(this.temp+1)
+  this.setTemp(this.temp+number)
+  return this.getTemp()
+};
+
+Thermostat.prototype.down = function (number) {
+  if((this.getTemp() - number)<=10) throw "Minimum temperature is 10c"
+  this.setTemp(this.temp-number)
   return this.getTemp()
 };
