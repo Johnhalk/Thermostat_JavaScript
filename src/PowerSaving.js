@@ -14,8 +14,12 @@ PowerSaving.prototype.setMode = function (state) {
 };
 
 PowerSaving.prototype.getMax = function () {
-  if (this.state = 'On') {
+  if (this.state === 'On') {
     this.maxTemp = 25
+  } else if (this.state === 'Off') {
+    this.maxTemp = 32
+  } else {
+    throw "Unexpected setting."
   }
   return this.maxTemp
 };

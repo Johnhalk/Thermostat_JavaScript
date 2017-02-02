@@ -28,5 +28,12 @@ describe('PowerSaving', function(){
       powerSaving.setMode('On')
       expect(powerSaving.getMax()).toEqual(25)
     });
+    it('sets max temp to 32C when state is off', function(){
+      powerSaving.setMode('Off')
+      expect(powerSaving.getMax()).toEqual(32)
+    });
+    it('throws error when setting is undefined', function (){
+      expect(function(){powerSaving.setMode('banana')}).toThrow("Unexpected setting.")
+    });
   });
 });

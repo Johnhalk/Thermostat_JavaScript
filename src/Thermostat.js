@@ -47,3 +47,17 @@ Thermostat.prototype._tempCap = function (number) {
 Thermostat.prototype.maxTemp = function () {
   return this.powerSaver.getMax()
 };
+
+Thermostat.prototype.resetTemp = function () {
+  this.setTemp(20);
+};
+
+Thermostat.prototype.energyUsage = function () {
+  if (this.getTemp() < 18) {
+    return 'low-usage'
+  } else if (this.getTemp() < 25) {
+    return 'medium-usage'
+  } else {
+    return 'high-usage'
+  }
+};

@@ -52,4 +52,26 @@ describe('Thermostat', function(){
     });
   });
 
+
+  describe('Reset', function(){
+    it('the temperature to 20C', function(){
+      thermostat.resetTemp()
+      expect(thermostat.getTemp()).toEqual(20);
+    });
+  });
+
+  describe('Energy usage', function(){
+    it('when less than 18', function(){
+      thermostat.setTemp(17);
+      expect(thermostat.energyUsage()).toEqual('low-usage');
+    });
+    it('when between 18 to 25', function(){
+      thermostat.setTemp(22);
+      expect(thermostat.energyUsage()).toEqual('medium-usage');
+    });
+    it('when higher than 25', function(){
+      thermostat.setTemp(25);
+      expect(thermostat.energyUsage()).toEqual('high-usage');
+    });
+  });
 });
