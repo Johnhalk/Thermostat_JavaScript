@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="../src/Thermostat.js"></script>
+    <script src="../src/PowerSaving.js"></script>
+    <meta charset="UTF-8">
+    <title>Thermostat</title>
+  </head>
+
+  <body>
+    <div id="thermostat">
+      <h1 align='center'>MEGASTAT</h1>
+      <div class="display">
+        <div id="temp">
+          <span>Current Temp</span>
+        </div>
+        <div id="energy_usage">
+          <span>Energy Usage</span>
+        </div>
+      </div>
+      <div class="temp_control">
+        <button id="add">
+          <span>+</span>
+        </button>
+        <button id="subtract">
+          <span>-</span>
+        </button>
+      </div>
+      <button id="reset">
+        reset
+      </button></br>
+      <button id="power_saving">
+        <span>On/Off</span>
+      </button>
+    </div>
+  </body>
+</html>

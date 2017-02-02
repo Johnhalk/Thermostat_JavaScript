@@ -24,24 +24,24 @@ Thermostat.prototype.getTemp = function () {
   return this.temp
 };
 
-Thermostat.prototype.up = function (number) {
-  this._tempCap(number)
-  this.setTemp(this.temp+number)
+Thermostat.prototype.up = function () {
+  this._tempCap()
+  this.setTemp(this.temp+=1)
   return this.getTemp()
 };
 
-Thermostat.prototype.down = function (number) {
-  this._tempFloor(number)
-  this.setTemp(this.temp-number)
+Thermostat.prototype.down = function () {
+  this._tempFloor()
+  this.setTemp(this.temp-=1)
   return this.getTemp()
 };
 
-Thermostat.prototype._tempFloor = function (number) {
-  if((this.getTemp() - number)<10) throw "Minimum temperature is 10C"
+Thermostat.prototype._tempFloor = function () {
+  if((this.getTemp() - 1)<10) throw "Minimum temperature is 10C"
 };
 
-Thermostat.prototype._tempCap = function (number) {
-  if((this.getTemp() + number) > this.maxTemp()) throw ("Maximum temperature is " + this.maxTemp() + "C")
+Thermostat.prototype._tempCap = function () {
+  if((this.getTemp() + 1) > this.maxTemp()) throw ("Maximum temperature is " + this.maxTemp() + "C")
 };
 
 Thermostat.prototype.maxTemp = function () {

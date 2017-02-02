@@ -1,0 +1,53 @@
+body {
+  background-color: powderblue;
+}
+
+h1 {
+  font-family: arial;
+  font-size: 30px;
+}
+
+#thermostat {
+  width: 600px;
+  height: 400px;
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 10px;
+}
+
+#thermostat .display {
+  width: 500px;
+  background-color: grey;
+  border: 2px solid darkgrey;
+}
+
+#thermostat .display #temp {
+  color: green;
+  display: block;
+  text-align: left;
+}
+
+#thermostat .display #energy_usage {
+  color: green;
+  display: block;
+  text-align: right;
+}
+
+#thermostat .temp_control {
+  background-color: orange;
+  font-size: 50px;
+  font-weight: bold;
+  float: left;
+}
+
+#thermostat #reset {
+  background-color: red;
+  font-size: 30px;
+  float: right;
+}
+
+#thermostat #power_saving {
+  background-color: yellow;
+  font-size: 30px;
+  float: right;
+}

@@ -15,12 +15,12 @@ describe('Thermostat', function(){
   describe('up', function(){
 
     it('increases the temperature', function(){
-      expect(thermostat.up(1)).toEqual(21);
+      expect(thermostat.up()).toEqual(21);
     });
 
     describe('powerSaving on', function(){
       it('stops temperature increasing past 25C', function(){
-        expect(function(){thermostat.up(6)}).toThrow("Maximum temperature is 25C")
+        expect(function(){for (var i = 0; i<6; i++){thermostat.up()}}).toThrow("Maximum temperature is 25C")
       });
     });
 
@@ -29,10 +29,13 @@ describe('Thermostat', function(){
 
   describe('down', function(){
     it('decreases the temperature', function(){
-      expect(thermostat.down(3)).toEqual(17);
+      for (var i = 0; i <= 3; i++) {
+        thermostat.down()
+      }
+      expect(thermostat.down()).toEqual(15);
     });
     it('stops temperature decreasing below 10', function(){
-      expect(function(){thermostat.down(11)}).toThrow("Minimum temperature is 10C")
+      expect(function(){for (var i = 0; i<12; i++){thermostat.down()}}).toThrow("Minimum temperature is 10C")
     });
   });
 
