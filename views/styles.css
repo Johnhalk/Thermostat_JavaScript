@@ -44,10 +44,12 @@ h1 {
   background-color: red;
   font-size: 30px;
   float: right;
+  /*z-index: 5;*/
 }
 
-#thermostat #power_saving {
+#thermostat .power_saving {
   background-color: yellow;
   font-size: 30px;
   float: right;
+  /*z-index: 10;*/
 }

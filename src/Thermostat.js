@@ -52,6 +52,14 @@ Thermostat.prototype.resetTemp = function () {
   this.setTemp(20);
 };
 
+Thermostat.prototype.powerSaveOn = function () {
+  this.powerSaver.setMode('On');
+};
+
+Thermostat.prototype.powerSaveOff = function () {
+  this.powerSaver.setMode('Off');
+};
+
 Thermostat.prototype.energyUsage = function () {
   if (this.getTemp() < 18) {
     return 'low-usage'
