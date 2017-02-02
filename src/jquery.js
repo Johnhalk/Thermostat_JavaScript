@@ -9,14 +9,21 @@ $(document).ready(function() {
         thermostat.getTemp()
     );
 
-    $("#Off").css("visibility", "hidden");
-    $("#On").css("visibility", "visible");
+    $("#energy_usage").text(
+        thermostat.energyUsage()
+    );
+
+    $("#Off").css("visibility", "visible");
+    $("#On").css("visibility", "hidden");
 
 
     $( "#add" ).click(function() {
         thermostat.up()
             $("#temp").text(
                 thermostat.getTemp()
+            );
+            $("#energy_usage").text(
+                thermostat.energyUsage()
             );
     });
 
@@ -25,12 +32,21 @@ $(document).ready(function() {
             $("#temp").text(
                 thermostat.getTemp()
             );
+            $("#energy_usage").text(
+                thermostat.energyUsage()
+            );
+            if($("#energy_usage") === 'low-usage'){
+                $("#energy_usage").css("color", "green");
+            }
     });
 
     $("#reset").click(function(){
         thermostat.resetTemp()
             $("#temp").text(
                 thermostat.getTemp()
+            );
+            $("#energy_usage").text(
+                thermostat.energyUsage()
             );
     });
 
@@ -46,4 +62,7 @@ $(document).ready(function() {
         $("#On").css("visibility", "visible");
     })
 
+    // if($("#energy_usage").text === "low-usage"){
+    //     $("#energy_usage").css("color", "green")
+    // }
 });

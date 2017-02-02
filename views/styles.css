@@ -28,7 +28,6 @@ h1 {
 }
 
 #thermostat .display #energy_usage {
-  color: green;
   display: block;
   text-align: right;
 }
