@@ -1,8 +1,7 @@
 'use strict';
 
 function PowerSaving(){
-  this.state = null;
-  this.getMode();
+  this.setMode('On');
 }
 
 PowerSaving.prototype.getMode = function () {
@@ -11,4 +10,12 @@ PowerSaving.prototype.getMode = function () {
 
 PowerSaving.prototype.setMode = function (state) {
   this.state = state
+  this.getMax();
+};
+
+PowerSaving.prototype.getMax = function () {
+  if (this.state = 'On') {
+    this.maxTemp = 25
+  }
+  return this.maxTemp
 };
