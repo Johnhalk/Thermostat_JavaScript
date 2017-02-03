@@ -53,6 +53,9 @@ $(document).ready(function() {
     $("#On").click(function(){
         $("#On").css("visibility", "hidden");
         thermostat.powerSaveOn();
+        $("#temp").text(
+            thermostat.getTemp()
+        );
         $("#Off").css("visibility", "visible");
     })
 
